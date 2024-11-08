@@ -5,7 +5,7 @@ import joblib
 import plotly.express as px
 
 # Charger le modèle entraîné
-model = joblib.load('src/models/model_LogisticRegression.pkl')  # Remplacez par le nom réel de votre modèle
+model = joblib.load('models/model_LogisticRegression.pkl')  # Remplacez par le nom réel de votre modèle
 
 # Définir les options possibles pour les variables catégorielles
 categorical_variables = {

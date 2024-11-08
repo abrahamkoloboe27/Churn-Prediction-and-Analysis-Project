@@ -7,7 +7,7 @@ from typing import Optional, Literal
 
 
 # Charger le modèle entraîné
-model = joblib.load('src/models/model_LogisticRegression.pkl')  
+model = joblib.load('models/model_LogisticRegression.pkl')  
 
 
 # Définir la classe CustomerData avec Pydantic
