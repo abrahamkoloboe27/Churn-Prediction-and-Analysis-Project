@@ -10,7 +10,7 @@ def main():
     with st.expander("Auteur", True):
         c_1, c_2 = st.columns([1, 2])
         with c_1:
-            st.image("src/About the author.png", caption="S. Abraham Z. KOLOBOE", use_column_width=True)
+            st.image("src/About the author.png", caption="S. Abraham Z. KOLOBOE", use_container_width=True)
         with c_2:
             st.header("**S. Abraham Z. KOLOBOE**")
             st.markdown("""
