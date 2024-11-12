@@ -229,3 +229,26 @@ st.sidebar.write("🔍 **Données filtrées selon la durée d'engagement :**")
 with st.sidebar.expander("📊 Aperçu des Données Filtrées", False):
     st.write(filtered_data)
 
+# Footer avec emojis et style
+st.markdown("---")
+st.markdown(
+    """
+    <style>
+    .footer {
+        text-align: center;
+        color: #4CAF50;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .footer a {
+        color: #4CAF50;
+        text-decoration: none;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    </style>
+    <p class='footer'>💡 Dashboard créé avec ❤️ par <a href='https://www.linkedin.com/in/abraham-zacharie-koloboe-data-science-ia-generative-llms-machine-learning/' target='_blank'>Abraham KOLOBOE</a></p>
+    """,
+    unsafe_allow_html=True
+)
