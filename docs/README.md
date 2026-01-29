@@ -40,7 +40,7 @@ Tout savoir sur les métriques d'évaluation ML :
 - Métriques Business vs Métriques ML
 - Guide de décision rapide
 
-**🎯 Pour qui ?** Essentieltout praticien ML
+**🎯 Pour qui ?** Essentiel pour tout praticien ML
 
 ---
 
