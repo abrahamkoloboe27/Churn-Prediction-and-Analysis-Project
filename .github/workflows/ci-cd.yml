@@ -1,0 +1,124 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+# Set default permissions to read-only
+permissions:
+  contents: read
+
+jobs:
+  lint-and-test:
+    name: Lint and Test
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install flake8 pytest
+    
+    - name: Lint with flake8
+      run: |
+        # Stop the build if there are Python syntax errors or undefined names
+        flake8 src/ --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Exit-zero treats all errors as warnings
+        flake8 src/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+  docker-build:
+    name: Build and Test Docker Image
+    runs-on: ubuntu-latest
+    needs: lint-and-test
+    
+    permissions:
+      contents: read
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    
+    - name: Build Docker image
+      run: |
+        docker build -t churn-prediction-app:test .
+    
+    - name: Test Docker image
+      run: |
+        # Start container in background
+        docker run -d -p 8501:8501 --name test-app churn-prediction-app:test
+        
+        # Wait for container to start
+        echo "Waiting for container to start..."
+        sleep 15
+        
+        # Check if container is running
+        docker ps | grep test-app
+        
+        # Check health endpoint
+        echo "Testing health endpoint..."
+        for i in {1..10}; do
+          if curl -f http://localhost:8501/_stcore/health; then
+            echo "Health check passed!"
+            break
+          fi
+          echo "Attempt $i: Waiting for app to be ready..."
+          sleep 5
+        done
+        
+        # View logs for debugging
+        echo "Container logs:"
+        docker logs test-app
+        
+        # Stop container
+        docker stop test-app
+        docker rm test-app
+    
+    - name: Check Docker image size
+      run: |
+        docker images churn-prediction-app:test --format "Size: {{.Size}}"
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    needs: docker-build
+    
+    permissions:
+      contents: read
+      security-events: write  # Required for uploading SARIF results
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+      continue-on-error: true
+    
+    - name: Upload Trivy results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: 'trivy-results.sarif'
+      continue-on-error: true
