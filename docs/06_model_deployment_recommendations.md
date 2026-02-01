@@ -459,7 +459,8 @@ def predict():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Note: Ne jamais utiliser debug=True en production pour des raisons de sécurité
+    app.run(host='0.0.0.0', port=5000)
 ```
 
 ---
@@ -737,9 +738,11 @@ import numpy as np
 class DriftDetector:
     """Détecter le drift des données et du modèle"""
     
-    def __init__(self, reference_data, reference_predictions):
+    def __init__(self, reference_data, reference_predictions, reference_accuracy=None, reference_recall=None):
         self.reference_data = reference_data
         self.reference_predictions = reference_predictions
+        self.reference_accuracy = reference_accuracy
+        self.reference_recall = reference_recall
     
     def detect_data_drift(self, new_data, threshold=0.05):
         """Détecter le drift des features"""
@@ -1187,4 +1190,4 @@ print(f"Budget utilisé: {recommendations['total_cost']}€")
 
 **Navigation**
 - [← Précédent : Meilleures Pratiques EDA](05_eda_best_practices.md)
-- [Retour au README principal](../Readme.md)
+- [Retour au README principal](../README.md)

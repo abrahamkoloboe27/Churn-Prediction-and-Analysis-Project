@@ -453,4 +453,4 @@ Vos données ont-elles une dépendance temporelle ?
 **Navigation**
 - [← Précédent : Fondamentaux ML](01_machine_learning_fundamentals.md)
 - [Suivant : Guide des Métriques →](03_metrics_guide.md)
-- [Retour au README principal](../Readme.md)
+- [Retour au README principal](../README.md)

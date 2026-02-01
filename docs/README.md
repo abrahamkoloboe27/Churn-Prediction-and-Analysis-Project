@@ -202,7 +202,7 @@ N'hésitez pas à contribuer au projet !
 
 Pour toute question sur cette documentation ou le projet :
 - Ouvrir une [issue sur GitHub](https://github.com/abrahamkoloboe27/Churn-Prediction-and-Analysis-Project/issues)
-- Consulter le [README principal](../Readme.md)
+- Consulter le [README principal](../README.md)
 
 ---
 

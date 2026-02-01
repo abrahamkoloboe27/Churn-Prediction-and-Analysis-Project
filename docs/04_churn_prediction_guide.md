@@ -875,4 +875,4 @@ impact = measure_retention_impact(
 **Navigation**
 - [← Précédent : Guide des Métriques](03_metrics_guide.md)
 - [Suivant : Meilleures Pratiques EDA →](05_eda_best_practices.md)
-- [Retour au README principal](../Readme.md)
+- [Retour au README principal](../README.md)

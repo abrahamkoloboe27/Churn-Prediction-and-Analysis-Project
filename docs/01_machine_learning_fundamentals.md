@@ -233,5 +233,5 @@ print(classification_report(y_test, y_pred))
 ---
 
 **Navigation**
-- [Retour au README principal](../Readme.md)
+- [Retour au README principal](../README.md)
 - [Suivant : Types de Tâches ML →](02_ml_task_types.md)

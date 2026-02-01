@@ -792,4 +792,4 @@ metrics = evaluate_classifier(y_test, y_pred, y_pred_proba[:, 1])
 **Navigation**
 - [← Précédent : Types de Tâches ML](02_ml_task_types.md)
 - [Suivant : Guide Churn Prediction →](04_churn_prediction_guide.md)
-- [Retour au README principal](../Readme.md)
+- [Retour au README principal](../README.md)

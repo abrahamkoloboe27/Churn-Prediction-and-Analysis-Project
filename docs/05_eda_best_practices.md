@@ -762,11 +762,11 @@ df_engineered = feature_engineering_examples(df)
 
 ## Outils et Bibliothèques
 
-### Pandas Profiling
+### Pandas Profiling (ydata-profiling)
 
 ```python
-# Installation: pip install pandas-profiling
-from pandas_profiling import ProfileReport
+# Installation: pip install ydata-profiling
+from ydata_profiling import ProfileReport
 
 profile = ProfileReport(df, title="Churn Dataset Report", explorative=True)
 profile.to_file("eda_report.html")
@@ -922,4 +922,4 @@ print("✓ EDA Complete!")
 **Navigation**
 - [← Précédent : Guide Churn Prediction](04_churn_prediction_guide.md)
 - [Suivant : Déploiement et Recommandations →](06_model_deployment_recommendations.md)
-- [Retour au README principal](../Readme.md)
+- [Retour au README principal](../README.md)
