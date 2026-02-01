@@ -104,7 +104,7 @@ git checkout -b fix/correction-bug
 
 ```bash
 # Lancer l'application localement
-streamlit run src/🏚️Acceuil.py
+streamlit run src/🏚️Accueil.py
 
 # Tester le build Docker
 docker build -t test-app .
