@@ -1,0 +1,45 @@
+2026-02-01 14:53:31,483:INFO:Initialisation du projet de prédiction du churn client.
+2026-02-01 14:53:50,991:INFO:Aperçu des données enregistré dans data/data_preview.csv
+2026-02-01 14:53:51,006:INFO:Informations sur les données enregistrées dans data/data_info.txt
+2026-02-01 14:53:51,015:INFO:Statistiques descriptives enregistrées dans data/data_describe.csv
+2026-02-01 14:54:00,134:INFO:Initialisation du projet de prédiction du churn client.
+2026-02-01 14:54:00,171:INFO:Aperçu des données enregistré dans data/data_preview.csv
+2026-02-01 14:54:00,179:INFO:Informations sur les données enregistrées dans data/data_info.txt
+2026-02-01 14:54:00,186:INFO:Statistiques descriptives enregistrées dans data/data_describe.csv
+2026-02-01 14:54:00,409:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-02-01 14:54:00,418:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-02-01 14:54:02,778:INFO:Barplots des variables catégoriques enregistrés dans figures/categorical_barplots.png
+2026-02-01 14:54:03,176:INFO:Boxplots des variables numériques enregistrés dans figures/numerical_boxplots.png
+2026-02-01 14:54:03,341:INFO:Matrice de corrélation enregistrée dans figures/correlation_matrix.png
+2026-02-01 14:54:03,537:INFO:DataFrame normalisée enregistrée dans data/X_normalized.csv
+2026-02-01 14:54:03,556:INFO:Taille de l'entraînement: (4930, 19)
+2026-02-01 14:54:03,556:INFO:Taille de la validation: (1056, 19)
+2026-02-01 14:54:03,556:INFO:Taille du test: (1057, 19)
+2026-02-01 14:54:03,566:INFO:Pipelines scikit-learn créés pour chaque modèle.
+2026-02-01 14:54:03,600:INFO:Début du fine-tuning pour LogisticRegression
+2026-02-01 14:54:07,132:INFO:Meilleurs paramètres pour LogisticRegression: {'classifier__C': 10, 'classifier__penalty': 'l2', 'classifier__solver': 'lbfgs'}
+2026-02-01 14:54:07,132:INFO:Début du fine-tuning pour RandomForest
+2026-02-01 14:54:34,691:INFO:Meilleurs paramètres pour RandomForest: {'classifier__max_depth': 10, 'classifier__min_samples_leaf': 2, 'classifier__min_samples_split': 5, 'classifier__n_estimators': 200}
+2026-02-01 14:54:34,691:INFO:Début du fine-tuning pour SVC
+2026-02-01 14:55:36,291:INFO:Meilleurs paramètres pour SVC: {'classifier__C': 0.1, 'classifier__gamma': 'scale', 'classifier__kernel': 'linear'}
+2026-02-01 14:55:36,329:INFO:Évaluation du modèle LogisticRegression
+2026-02-01 14:55:36,372:INFO:Rapport de classification enregistré pour LogisticRegression
+2026-02-01 14:55:36,373:INFO:Plotting confusion matrix for Matrice de Confusion - LogisticRegression
+2026-02-01 14:55:36,789:INFO:Courbe ROC enregistrée pour LogisticRegression
+2026-02-01 14:55:36,790:INFO:Métriques enregistrées pour LogisticRegression
+2026-02-01 14:55:36,790:INFO:Évaluation du modèle RandomForest
+2026-02-01 14:55:36,885:INFO:Rapport de classification enregistré pour RandomForest
+2026-02-01 14:55:36,887:INFO:Plotting confusion matrix for Matrice de Confusion - RandomForest
+2026-02-01 14:55:37,195:INFO:Courbe ROC enregistrée pour RandomForest
+2026-02-01 14:55:37,195:INFO:Métriques enregistrées pour RandomForest
+2026-02-01 14:55:37,196:INFO:Évaluation du modèle SVC
+2026-02-01 14:55:37,359:INFO:Rapport de classification enregistré pour SVC
+2026-02-01 14:55:37,360:INFO:Plotting confusion matrix for Matrice de Confusion - SVC
+2026-02-01 14:55:37,639:INFO:Courbe ROC enregistrée pour SVC
+2026-02-01 14:55:37,640:INFO:Métriques enregistrées pour SVC
+2026-02-01 14:55:37,733:INFO:Modèles optimisés sauvegardés dans le dossier models.
+2026-02-01 14:55:37,752:INFO:Tous les rapports de classification enregistrés dans metrics/all_classification_reports.csv
+2026-02-01 14:55:37,766:INFO:Résultats du benchmarking enregistrés dans metrics/benchmark_results.csv
+2026-02-01 14:55:37,767:INFO:Le meilleur modèle est : LogisticRegression
+2026-02-01 14:55:38,014:INFO:Figure de comparaison des métriques enregistrée dans figures/model_comparison_metrics.png
+2026-02-01 14:55:38,164:INFO:Figure des scores finaux enregistrée dans figures/model_final_scores.png
